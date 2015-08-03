@@ -1,0 +1,15 @@
+<% if @status == 'email_validation' %>
+
+  <% content_for :meta_title, 'Email Confirmation' %>
+  <% content_for :meta_description, "An email was just sent. Please check your inbox." %>
+  <h1>A Validation Email is Coming</h1>
+  <p>We've just sent an email to <strong><%= @user.email %></strong>. Please check your inbox or spam folder.</p>
+
+<% elsif @status == 'password_confirmation' %>
+
+  <% content_for :meta_title, 'Password creation Email Confirmation' %>
+  <% content_for :meta_description, "An email was just sent. Please check your inbox or your spam folder." %>
+  <h1>A Password Creation Security Email is Coming</h1>
+  <p>For your security we need to check that you truly are the owner of this account. Please check your <strong><%= @user.email %></strong> inbox or spam folder.</p>
+
+<% end %>

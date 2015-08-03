@@ -1,0 +1,12 @@
+<% if current_user %>
+	<div class="btn-group">
+		<br />
+		<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><%= current_user.email %>&nbsp;<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<%= content_tag :li, link_to(t('logout'), logout_path) %>
+		</ul>
+	</div>
+<% else %>
+	<p><br /><%= link_to t('authentication.login_now'), login_path, class: 'btn' %></p>
+<% end %>
+

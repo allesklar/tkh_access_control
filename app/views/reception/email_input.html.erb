@@ -1,0 +1,21 @@
+<% content_for :meta_title, 'Login with your email' %>
+<% content_for :meta_description, "We need your email address to initiate the login or account creation procedure." %>
+
+<% unless current_user # most folks coming to this page should not be logged in %>
+
+  <h1 id="login-header">Login</h1>
+
+  <%= render 'email_input_form' %>
+
+<% else # the user is already logged in %>
+
+  <h1>You are already logged in</h1>
+  <p>This is the login page but it appears that you are already logged in with this address: <strong><%= current_user.email %></strong></p>
+
+  <p><%= link_to 'go to home page', root_path, class: 'btn btn-primary' %><%= link_to 'logout', disconnect_path, class: 'btn btn-default' %></p>
+
+<% end %>
+
+<%= render 'admin_context_menu' %>
+<%# partial in tkh_menus gem or has to be added in host app %>
+<%= render './shared/menus' %>
