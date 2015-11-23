@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ["swami@TenThousandHours.eu"]
   s.homepage    = "https://github.com/allesklar/tkh_access_control"
   s.summary     = "Simple authentication and authorization Rails engine."
-  s.description = "A Rails engine for access control authentication and authorization customized for Ten Thousand Hours and its gem suite."
+  s.description = "A Rails engine for access control authentication and authorization customized for Ten Thousand Hours and its tkh_cms gem suite."
   s.license     = 'MIT'
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md", "CHANGELOG.md"]
