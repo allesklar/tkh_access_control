@@ -49,4 +49,4 @@ de:
       login_needed: "Du musst dich einloggen um auf diese Seite zuzugreifen. Du wurdest zum Login umgeleitet."
       no_such_email: "Es gibt kein Nutzerkonto mit dieser Email-Adresse."
       password_reset_expired: "Das Zurücksetzen des Kennworts ist abgelaufen. Dies war nur für 2 Stunden möglich"
-      restricted_access: "Diese Sektion ist nur für Administratoren zugänglich. Kontaktiere den Inhaber der Webseite, wenn du Administrator-Rechte erhalten möchtest."
+      restricted_access: "This section is restricted. You have been directed to the site's home page."

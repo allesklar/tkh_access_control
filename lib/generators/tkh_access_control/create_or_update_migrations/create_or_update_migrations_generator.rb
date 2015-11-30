@@ -16,8 +16,12 @@ module TkhAccessControl
       end
 
       def copy_migrations
-        puts 'creating user migration'
+        puts 'creating authentication and authorization migrations'
         migration_template "create_users.rb", "db/migrate/create_users.rb"
+        migration_template "create_roles.rb", "db/migrate/create_roles.rb"
+        migration_template "create_powers.rb", "db/migrate/create_powers.rb"
+        migration_template "create_permissions.rb", "db/migrate/create_permissions.rb"
+        migration_template "create_abilities.rb", "db/migrate/create_abilities.rb"
       end
 
     end
