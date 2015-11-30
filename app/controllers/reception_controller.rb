@@ -190,7 +190,7 @@ class ReceptionController < ApplicationController
 
   def disconnect
     cookies.delete(:auth_token)
-    redirect_to session[:target_page] || root_url, notice: t('authentication.logout_confirmation')
+    redirect_to root_url, notice: t('authentication.logout_confirmation')
     destroy_target_page
   end
 
