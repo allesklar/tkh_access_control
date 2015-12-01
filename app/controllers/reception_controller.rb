@@ -123,6 +123,15 @@ class ReceptionController < ApplicationController
   def password_checking
     @user = User.find(params[:id])
     if @user
+
+      # Update names if necessary
+      if params[:user][:first_name].present? || params[:user][:last_name].present? || params[:user][:other_name].present?
+        @user.first_name = params[:user][:first_name]
+        @user.last_name = params[:user][:last_name]
+        @user.other_name = params[:user][:other_name]
+        @user.save
+      end
+
       if @user.email_validated?
         if @user.authenticate(params[:user][:password])
           login_the_user
