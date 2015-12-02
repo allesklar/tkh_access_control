@@ -22,6 +22,7 @@ module TkhAccessControl
         migration_template "create_powers.rb", "db/migrate/create_powers.rb"
         migration_template "create_permissions.rb", "db/migrate/create_permissions.rb"
         migration_template "create_abilities.rb", "db/migrate/create_abilities.rb"
+        migration_template "add_stripe_customer_id_to_users.rb", "db/migrate/add_stripe_customer_id_to_users.rb"
       end
 
     end
