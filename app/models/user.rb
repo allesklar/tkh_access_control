@@ -19,7 +19,8 @@ class User < ActiveRecord::Base
   attr_accessor :remember_me
 
   scope :alphabetically, -> { order('last_name, first_name') }
-  scope :administrators, -> { where('admin = ?', true) } # FIXME - new algorithm
+  scope :administrators, -> { joins(:roles).where('roles.name = ?', 'admin') }
+
   scope :by_recent, -> { order('updated_at desc') }
 
   before_create { generate_token(:auth_token) }
