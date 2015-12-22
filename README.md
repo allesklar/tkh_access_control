@@ -2,15 +2,14 @@
 
 This is a Rails engine which provides basic authentication and authorization.
 
-Primarily developed for Ten Thousand Hours but we are happy to share if anybody finds it useful.  It's primarily developed to work in sync with the tkh_cms gem suite but over time more and more effort will be made to make it work in isolation.
+Primarily developed for Ten Thousand Hours but we are happy to share if anybody finds it useful.  It's primarily developed to work in sync with the tkh_cms gem suite but over time more and more effort will be made to make it work in isolation if some interest is shown by the community.
 
-It's still in its infancy. Many improvements to come.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'tkh_access_control', '~> 0.0.1'
+    gem 'tkh_access_control', '~> 0.13'
 
 And then execute:
 
@@ -30,12 +29,21 @@ And then of course restart your server!
 
 		$ rails server
 
+
+## Upgrading
+
+    $ bundle update tkh_access_control
+
 Upon upgrading to a new version of the gem this command updates migration and locale files if needed.
 
 		$ rake tkh_access_control:update
 
+Migrate the database if necessary
 
-## Usage
+    $ rake db:migrate
+
+
+## Usage - AUTHENTICATION
 
 
 A starting point could be:
@@ -50,13 +58,22 @@ To display the login information module anywhere in your views
 
 To restrict access to your controllers to logged in users:
 
-		before_filter :authenticate, except: 'show'
+		before_action :authenticate, except: 'show'
 
-To restrict user to your controllers to certain permissions
 
-  <!-- TODO replace this method with a role/permission substitute -->
+## Usage - AUTHORIZATION
 
-	<!-- before_filter :authenticate_with_admin, except: [ 'show', 'index' ] -->
+Ta add a role to a user
+
+    @user.roles << 'role_name'
+
+To add a permission to a role
+
+    @role.permissions << 'permission_name'
+
+To restrict a logged in user's access to your controllers on a permission basis
+
+    before_action -> { require_permission 'permission_name'}, except: [ :show ]
 
 
 ## Contributing
