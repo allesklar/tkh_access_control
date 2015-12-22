@@ -63,17 +63,21 @@ To restrict access to your controllers to logged in users:
 
 ## Usage - AUTHORIZATION
 
-Ta add a role to a user
+Create a role
 
-    @user.roles << 'role_name'
+    @role = Role.create name: 'admin', description: 'Is allowed to do everything.'
 
 To add a permission to a role
 
     @role.permissions << 'permission_name'
 
-To restrict a logged in user's access to your controllers on a permission basis
+To restrict a logged in user's access to your controller methods on a permission basis
 
     before_action -> { require_permission 'permission_name'}, except: [ :show ]
+
+Please note that the above tasks are only performed by the developer (you) while the task below can also be performed by the Webmaster (your client) in the 'members' section of the "tkh_mailing_list" gem
+
+    @user.roles << 'role_name'
 
 
 ## Contributing
@@ -82,7 +86,7 @@ Pull requests for new features and bug fixes are welcome.
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Create your failing tests based on the Test Unit framework.
+3. Create your failing tests based on the Minitest framework.
 4. Create your code which makes the tests pass.
 5. Commit your changes (`git commit -am 'Added some feature'`)
 6. Push to the branch (`git push origin my-new-feature`)
