@@ -9,7 +9,7 @@ Primarily developed for Ten Thousand Hours but we are happy to share if anybody 
 
 Add this line to your application's Gemfile:
 
-    gem 'tkh_access_control', '~> 0.13'
+    gem 'tkh_access_control', '~> 1.0.beta1'
 
 And then execute:
 

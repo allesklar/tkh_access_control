@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'bcrypt'
   s.add_dependency "simple_form"
   s.add_dependency 'stringex'
-  s.add_dependency 'tkh_mailing_list', "~> 0.13" # To manage user roles
+  s.add_dependency 'tkh_mailing_list', "~> 1.0.beta1" # To manage user roles
 
   s.add_development_dependency "sqlite3"
 end
