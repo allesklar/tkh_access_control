@@ -25,7 +25,7 @@ module TkhAccessControlActionControllerExtension
       end
     end
 
-    def require_permission( permission )
+    def require_permission_to( permission )
       unless current_user.is_allowed_to? permission
         redirect_to safe_root_url, alert: t('authentication.warning.restricted_access')
       end

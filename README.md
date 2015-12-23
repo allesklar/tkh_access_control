@@ -73,7 +73,7 @@ To add a permission to a role
 
 To restrict a logged in user's access to your controller methods on a permission basis
 
-    before_action -> { require_permission 'permission_name'}, except: [ :show ]
+    before_action -> { require_permission_to 'permission_name'}, except: [ :show ]
 
 Please note that the above tasks are only performed by the developer (you) while the task below can also be performed by the Webmaster (your client) in the 'members' section of the "tkh_mailing_list" gem
 
