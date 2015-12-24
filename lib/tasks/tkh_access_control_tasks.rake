@@ -12,7 +12,7 @@ namespace :tkh_access_control do
   end
 
   desc "Upgrading roles and permissions from the tkh_authentication gem. Transfering admins to new system."
-  task :upgrade_from_tkh_authentication do
+  task :upgrade_from_tkh_authentication => :environment do
     # create the main role
     admin_role = Role.create name: 'admin', description: 'Can do everything'
     # Give all permissions to the admins
