@@ -4,7 +4,6 @@ require 'simple_form'
 require 'stringex'
 require 'tkh_access_control/tkh_access_control_action_controller_extension'
 require 'tkh_access_control/tkh_access_control_helper'
-# require 'tkh_mailing_list' # debugging this
 
 module TkhAccessControl
   class Engine < ::Rails::Engine

@@ -4,13 +4,6 @@ Rails.application.routes.draw do
 
     # normal translation scoping
     scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
-      resources :users do
-        member do
-          post :make_admin
-          post :remove_admin
-        end
-        collection { post :detect_existence }
-      end
       ##### ACCESS CONTROL
       # legacy routes. Pointing to new pathway. Keep them. They are semantically sound.
       # still used in this gem.
@@ -35,13 +28,6 @@ Rails.application.routes.draw do
   else # special routing for localized routes via the route_translator gem
 
     localized do
-      resources :users do
-        member do
-          post :make_admin
-          post :remove_admin
-        end
-        collection { post :detect_existence }
-      end
       ##### ACCESS CONTROL
       # legacy routes. Pointing to new pathway. Keep them. They are semantically sound.
       # still used in this gem.
