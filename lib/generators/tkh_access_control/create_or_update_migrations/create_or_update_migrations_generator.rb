@@ -5,7 +5,7 @@ module TkhAccessControl
     class CreateOrUpdateMigrationsGenerator < ::Rails::Generators::Base
       include Rails::Generators::Migration
       source_root File.expand_path('../templates', __FILE__)
-      desc "add the migrations and locale files"
+      desc "add the migrations"
       def self.next_migration_number(path)
         unless @prev_migration_nr
           @prev_migration_nr = Time.now.utc.strftime("%Y%m%d%H%M%S").to_i

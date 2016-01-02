@@ -14,7 +14,7 @@ module TkhAccessControlHelper
     # duplicated from action controller extension. there must be a better way
     # FIXME - change logic of this method
     def administrator?
-      @administrator ||= current_user && current_user.admin?
+      @administrator ||= current_user && current_user.has_role?('admin')
     end
   end
 end
