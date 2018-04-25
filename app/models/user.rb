@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   # associations connected to tkh_content gem. Any page or comment model will do
   # FIXME - remove these dependencies. find other way.
   has_many :pages
-  has_many :comments, dependent: :destroy, foreign_key: 'author_id'
+  # disable this to temporarily fix Madrid bug. Madrid uses different comment schema
+  # has_many :comments, dependent: :destroy, foreign_key: 'author_id'
 
   # authorization
   has_many :powers, dependent: :destroy
