@@ -1,8 +1,8 @@
 module TkhAccessControlHelper
   def self.included(base)
     base.send(:include, InstanceMethods)
-    # base.before_filter :current_user
-    # base.after_filter :my_method_2
+    # base.before_action :current_user
+    # base.after_action :my_method_2
   end
 
   module InstanceMethods
