@@ -1,4 +1,4 @@
-class CreateAbilities < ActiveRecord::Migration
+class CreateAbilities < ActiveRecord::Migration[6.0]
   def change
     create_table :abilities do |t|
       t.integer   :role_id
